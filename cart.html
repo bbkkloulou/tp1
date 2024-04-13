@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre Panier</title>
+  <style>
+    
+    .cart-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Votre Panier</h1>
+  </header>
+
+  <div class="cart-items"></div>
+
+  <footer>
+    <p>&copy; 2024 Votre Boutique de Vêtements</p>
+  </footer>
+
+  <script>
+    
+    let cartItems = [
+      { name, price },
+      
+    ];
+
+    
+    function displayCartItems() {
+      let cartContainer = document.querySelector('.cart-items');
+      cartContainer.innerHTML = ''; 
+
+      cartItems.forEach(item => {
+        let itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+          <h3>${item.name}</h3>
+          <p>Description du produit. Prix : ${item.price}</p>
+        `;
+        cartContainer.appendChild(itemElement);
+      });
+    }
+
+    
+    window.onload = function() {
+      displayCartItems();
+    };
+  </script>
+</body>
+</html>
